@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- math.js for robust math parsing and functions -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjs@11.8.0/lib/browser/math.js"></script>
+</head>
+<body>
+  <main class="calculator" role="application" aria-label="Advanced Calculator">
+    <header class="calc-header">
+      <h1>Advanced Calculator</h1>
+      <div class="controls">
+        <button id="themeToggle" title="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="display-area">
+      <div id="history" class="history" aria-hidden="true"></div>
+      <input id="display" class="display" inputmode="none" aria-label="Calculator display" readonly />
+    </section>
+
+    <section class="buttons" role="group" aria-label="Calculator buttons">
+      <!-- row 1 -->
+      <button class="btn func" data-value="(">(</button>
+      <button class="btn func" data-value=")">)</button>
+      <button class="btn func" id="backspace" title="Backspace">⌫</button>
+      <button class="btn func" id="clear" title="Clear">C</button>
+
+      <!-- row 2 -->
+      <button class="btn mem" id="mc">MC</button>
+      <button class="btn mem" id="mr">MR</button>
+      <button class="btn mem" id="mPlus">M+</button>
+      <button class="btn mem" id="mMinus">M-</button>
+
+      <!-- row 3 -->
+      <button class="btn trig" data-value="sin(">sin</button>
+      <button class="btn trig" data-value="cos(">cos</button>
+      <button class="btn trig" data-value="tan(">tan</button>
+      <button class="btn op" data-value="^">^</button>
+
+      <!-- row 4 -->
+      <button class="btn" data-value="7">7</button>
+      <button class="btn" data-value="8">8</button>
+      <button class="btn" data-value="9">9</button>
+      <button class="btn op" data-value="/">÷</button>
+
+      <!-- row 5 -->
+      <button class="btn" data-value="4">4</button>
+      <button class="btn" data-value="5">5</button>
+      <button class="btn" data-value="6">6</button>
+      <button class="btn op" data-value="*">×</button>
+
+      <!-- row 6 -->
+      <button class="btn" data-value="1">1</button>
+      <button class="btn" data-value="2">2</button>
+      <button class="btn" data-value="3">3</button>
+      <button class="btn op" data-value="-">−</button>
+
+      <!-- row 7 -->
+      <button class="btn" data-value="0">0</button>
+      <button class="btn" data-value=".">.</button>
+      <button class="btn func" id="ans">ANS</button>
+      <button class="btn op" data-value="+">+</button>
+
+      <!-- row 8 advanced -->
+      <button class="btn adv" data-value="sqrt(">√</button>
+      <button class="btn adv" data-value="log10(">log</button>
+      <button class="btn adv" data-value="ln(">ln</button>
+      <button class="btn equals" id="equals">=</button>
+    </section>
+
+    <footer class="footer">
+      <small>Powered by Math.js • Keyboard support: numbers, + - * / ( ) . Enter = evaluate, Backspace to delete</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
